@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Клуб стрельбы из лука «Око Стрелка»</title>
+    <title>«Око Стрелка»</title>
+    <!-- Добавляем шрифт Montserrat Medium -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -11,51 +13,50 @@
             box-sizing: border-box;
         }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
             background-color: black;
             color: white;
         }
         header {
-            background-color: #237722;
-            padding: 20px;
-            text-align: center;
+            background-color: #000000;
+            padding: 15px 20px;
             position: relative;
         }
-        .header-content {
+        .header-nav {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            gap: 20px;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        .logo-slogan {
+        .logo-container {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 15px;
+        }
+        .logo-img {
+            height: 50px;
         }
         .slogan {
-            font-size: 24px;
+            font-size: 20px;
             font-style: italic;
-            color: #a3e6a3;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
         }
         nav {
             display: flex;
-            justify-content: center;
             gap: 20px;
-            padding: 20px;
-            background-color: #1b5a1c;
-            position: sticky;
-            top: 0;
-            z-index: 100;
         }
         nav a {
             color: white;
             text-decoration: none;
             font-size: 18px;
             transition: all 0.3s ease;
+            padding: 5px 10px;
         }
         nav a:hover {
-            color: #a3e6a3;
+            color: #237722;
             transform: scale(1.1);
         }
         .section {
@@ -165,26 +166,22 @@
             justify-content: center;
             height: 100vh;
             padding: 40px;
-            background: url('https://images.unsplash.com/photo-1604076913837-52ab5629fba9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+            background: #237722 url('images/logo.png') no-repeat center/contain;
             text-align: center;
             position: relative;
         }
-        .welcome::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0,0,0,0.5);
-        }
         .welcome-content {
             max-width: 800px;
-            background-color: rgba(27, 90, 28, 0.8);
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 40px;
             border-radius: 10px;
             position: relative;
             z-index: 1;
+            color: #333;
+        }
+        .welcome-content .button {
+            background-color: #237722;
+            color: white;
         }
         .about-content {
             display: flex;
@@ -271,19 +268,23 @@
             font-size: 20px;
         }
         @media (max-width: 768px) {
-            nav {
+            .header-nav {
                 flex-direction: column;
-                gap: 10px;
+                gap: 15px;
+            }
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
             }
             .about-content {
                 flex-direction: column;
             }
             .merch {
                 grid-template-columns: 1fr;
-            }
-            .logo-slogan {
-                flex-direction: column;
-                gap: 10px;
             }
         }
     </style>
@@ -300,29 +301,25 @@
     </div>
 
     <header>
-        <div class="header-content">
-            <div class="logo-slogan">
-                <!-- Здесь будет ваше лого -->
+        <div class="header-nav">
+            <div class="logo-container">
+                <img src="images/logo2.png" alt="Логотип клуба" class="logo-img">
                 <div class="slogan">Точность, проверенная временем</div>
             </div>
-            <h1>Клуб стрельбы из лука «Око Стрелка»</h1>
+            <nav>
+                <a href="#welcome">Главная</a>
+                <a href="#merch">Мерч</a>
+                <a href="#reviews">Отзывы</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
         </div>
     </header>
 
-    <nav>
-        <a href="#welcome">Главная</a>
-        <a href="#about">О нас</a>
-        <a href="#merch">Мерч</a>
-        <a href="#reviews">Отзывы</a>
-        <a href="#contacts">Контакты</a>
-    </nav>
-
     <div class="welcome section" id="welcome">
         <div class="welcome-content">
-            <h2 class="title">Добро пожаловать в «Око Стрелка»</h2>
-            <p>Мы объединяем людей, ценящих точность, концентрацию и стремление к совершенству.</p>
-            <img src="<img src="images/logo.png">" alt="Стрельба из лука" style="width:100%; max-width:500px; margin:20px auto; border-radius:10px;">
-            <a href="#about" class="button">Подробнее о клубе</a>
+            <h2 class="title" style="color: #237722;">Добро пожаловать в «Око Стрелка»</h2>
+            <p style="color: #333;">Мы объединяем людей, ценящих точность, концентрацию и стремление к совершенству.</p>
+            <a href="#merch" class="button">Посмотреть мерч</a>
         </div>
     </div>
 
@@ -330,21 +327,21 @@
         <h2 class="title">О нас</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>Клуб «Око Стрелка» - это профессиональная площадка для любителей и профессионалов стрельбы из лука. Наши посетители:</p>
+                <p>«Око Стрелка» - это профессиональная площадка для любителей и профессионалов стрельбы из лука. Наши посетители:</p>
                 
-                <p><strong>Спортсмены (12-35 лет)</strong><br>
+                <p><strong>Спортсмены</strong><br>
                 Для тех, кто серьезно занимается стрельбой из лука и участвует в соревнованиях. Мы предлагаем профессиональное оборудование и тренировки с опытными наставниками.</p>
                 
-                <p><strong>Любители активного отдыха (18-50 лет)</strong><br>
+                <p><strong>Любители активного отдыха</strong><br>
                 Идеальное место для тех, кто хочет попробовать что-то новое, провести время с друзьями и сделать эффектные фото.</p>
                 
-                <p><strong>Корпоративные клиенты (25-55 лет)</strong><br>
+                <p><strong>Корпоративные клиенты</strong><br>
                 Оригинальный тимбилдинг и корпоративные мероприятия, которые сплотят ваш коллектив и оставят незабываемые впечатления.</p>
                 
                 <p>Наш клуб оснащен современным оборудованием и безопасными зонами для стрельбы. Мы гордимся своей профессиональной командой инструкторов, многие из которых являются чемпионами различных соревнований.</p>
             </div>
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1598188306155-25e400eb5078?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Тренировка в клубе">
+                <img src="images/ы.jpg" alt="Тренировка в клубе">
             </div>
         </div>
     </div>
@@ -353,28 +350,28 @@
         <h2 class="title">Мерч и акции</h2>
         <div class="merch">
             <div class="merch-item">
-                <img src="merch1.jpg" alt="Футболка с логотипом">
-                <p>Футболка с логотипом</p>
-                <p>Цена: $20</p>
+                <img src="images/merch1.png" alt="Футболка с логотипом">
+                <p>Футболка чёрная с логотипом</p>
+                <p>Цена: 30BYN</p>
                 <button class="button" onclick="addToCart('Футболка')">Добавить в корзину</button>
             </div>
             <div class="merch-item">
-                <img src="merch2.jpg" alt="Кепка с символикой">
-                <p>Кепка с символикой</p>
-                <p>Цена: $15</p>
+                <img src="images/merch2.png" alt="Футболка с символикой">
+                <p>Футболка белая с символикой</p>
+                <p>Цена: 30BYN</p>
                 <button class="button" onclick="addToCart('Кепка')">Добавить в корзину</button>
             </div>
             <div class="merch-item">
-                <img src="merch3.jpg" alt="Набор стрел">
-                <p>Набор стрел</p>
-                <p>Цена: $30</p>
-                <button class="button" onclick="addToCart('Набор стрел')">Добавить в корзину</button>
+                <img src="images/merch3.png" alt="Кружка фирменная">
+                <p>Кружка фирменная</p>
+                <p>Цена: 5BYN</p>
+                <button class="button" onclick="addToCart('Кружка')">Добавить в корзину</button>
             </div>
             <div class="merch-item">
-                <img src="merch4.jpg" alt="Перчатка для стрельбы">
-                <p>Перчатка для стрельбы</p>
-                <p>Цена: $10</p>
-                <button class="button" onclick="addToCart('Перчатка')">Добавить в корзину</button>
+                <img src="images/merch4.png" alt="Подарочный набор">
+                <p>Подарочный набор</p>
+                <p>Цена: 43BYN</p>
+                <button class="button" onclick="addToCart('Набор')">Добавить в корзину</button>
             </div>
         </div>
     </div>
@@ -390,7 +387,7 @@
             <h3 style="text-align: center;">Отзывы пользователей:</h3>
             <!-- Примеры отзывов -->
             <div class="review-item">
-                <img src="user-icon.jpg" alt="Пользователь">
+                <img src="images/user.png" alt="Пользователь">
                 <div>
                     <strong>Алексей</strong> <br>
                     Отличный клуб с профессиональными тренерами! За месяц занятий значительно улучшил свои результаты.
@@ -399,7 +396,7 @@
                 </div>
             </div>
             <div class="review-item">
-                <img src="user-icon.jpg" alt="Пользователь">
+                <img src="images/user.png" alt="Пользователь">
                 <div>
                     <strong>Мария</strong> <br>
                     Очень атмосферное место и дружелюбный коллектив. Рекомендую всем, кто хочет попробовать что-то новое!
@@ -432,7 +429,7 @@
             <a href="#" title="Telegram">TG</a>
             <a href="#" title="YouTube">YT</a>
         </div>
-        <p>© 2025 Клуб стрельбы из лука «Око Стрелка» — Все права защищены</p>
+        <p>© 2025 «Око Стрелка» — Все права защищены</p>
         <div style="margin-top: 10px;">
             <a href="#" style="color: white; margin: 0 10px;">Политика конфиденциальности</a>
             <a href="#" style="color: white; margin: 0 10px;">Условия использования</a>
@@ -473,7 +470,7 @@
                 let newReview = document.createElement("div");
                 newReview.classList.add("review-item");
                 newReview.innerHTML = `
-                    <img src="user-icon.jpg" alt="Пользователь">
+                    <img src="images/user.png" alt="Пользователь">
                     <div>
                         <strong>${reviewName}</strong> <br>
                         ${reviewText} <br>
@@ -500,7 +497,6 @@
         }
         
         function updateCartCount() {
-            // Можно реализовать отображение количества товаров в корзине
             console.log("Товаров в корзине:", cart.length);
         }
 
